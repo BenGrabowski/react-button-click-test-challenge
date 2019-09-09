@@ -5,7 +5,7 @@ import Button from './button';
 
 describe('<Button />', () => {
     it('Should call props.onClick when the button is clicked', () => {
-        const wrapper = shallow(<Button onClick={props.onClick} />);
+        const wrapper = shallow(<Button onClick={props.onClick()} />);
         wrapper.find('button').simulate('click');
         expect(toJson(wrapper)).toMatchSnapshot();
     });
